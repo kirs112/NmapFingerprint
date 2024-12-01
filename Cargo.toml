@@ -1,0 +1,12 @@
+[package]
+name = "nmap_parse"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde_json = "1.0.133"
+regex = "1.11.1"
+tokio = { version = "1.15.0", features = ["full"] }
+serde = { version = "1.0.215", features = ["derive"] }
+anyhow = "1.0.93"
+regexp = "0.3.2"
