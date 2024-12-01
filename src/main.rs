@@ -370,6 +370,7 @@ async fn scan_with_probes(host: &str, port: u16, protocol: &str, included: Vec<S
     let mut record = HashMap::new();
     for probe in included {
         let mut payload = probe.probe.probestring.clone();
+        // 解决多出的转义字符 导致tcp发送的payload 存在错误 无返回情况
         if payload.contains("\\r")|| payload.contains("\\n"){
             payload = payload.replace("\\r","\r");
             payload = payload.replace("\\n","\n");
